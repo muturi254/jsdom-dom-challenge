@@ -5,6 +5,8 @@ document.addEventListener("DOMContentLoaded", () => {
     let heart = document.querySelector('button#heart');
     let minus = document.querySelector('button#minus');
     let plus = document.querySelector('button#plus');
+    let likes = document.querySelector('ul.likes');
+    let likeElement = document.createElement('li');
 
 
     // setinterval
@@ -52,5 +54,11 @@ document.addEventListener("DOMContentLoaded", () => {
     minus.addEventListener('click', () => {
         --counter;
         h1Element.innerHTML = counter;
+    });
+
+    // add like event 
+    heart.addEventListener('click', () => {
+        likeElement.innerHTML = `${counter} has been liked`;
+        likes.appendChild(likeElement);
     });
 })
